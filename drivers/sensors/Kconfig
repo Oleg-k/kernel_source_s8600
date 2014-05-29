@@ -1,0 +1,35 @@
+#
+# Miscellaneous I2C chip drivers configuration
+#
+# *** DEPRECATED! Do not add new entries! See Makefile ***
+#
+
+menu "Miscellaneous I2C Chip support"
+
+
+config SENSORS_BMA250
+	tristate "BMA250 Acceleration Sensor Driver"
+	depends on I2C
+	help
+	 BMA250 Acceleration Sensor Driver implemented by Bosch-Sensortec.
+
+config SENSORS_BMM050
+	tristate "BMM050 Magnetic Sensor Driver"
+	depends on I2C
+	help
+	 BMM050 Magnetic Sensor Driver implemented by Bosch-Sensortec.
+
+config SENSORS_CORE
+	tristate "Sensors core"
+	default n
+	help
+	  Say Y here to enable debugging messages for power supply class
+	  and drivers.
+
+config OPTICAL_GP2A
+	depends on I2C
+	tristate "GP2A driver"
+	default n
+
+
+endmenu
